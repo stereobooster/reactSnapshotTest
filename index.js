@@ -15,6 +15,10 @@ if(process.env.NODE_ENV === 'production') {
   })
 }
 
+app.get('/somestaticpage', (req, res) => {
+  res.send("yeey")
+})
+
 //build mode
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/public/index.html'));
