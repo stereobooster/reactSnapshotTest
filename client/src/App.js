@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   connecToServer() {
-    fetch('/');
+    // fetch('/');
   }
 
   componentDidMount() {
