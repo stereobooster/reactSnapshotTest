@@ -22,8 +22,8 @@ if(process.env.NODE_ENV === 'production') {
     console.log(req.URL)
     console.log(req.baseUrl)
     console.log(req.path)
-    
-    res.sendfile(path.join(__dirname = 'client/build/index.html'));
+
+    res.sendfile(path.join(__dirname = 'client/build'+req.path+'.html'));
   })
 }
 
