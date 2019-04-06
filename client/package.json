@@ -28,6 +28,6 @@
     "not op_mini all"
   ],
   "reactSnapshot": {
-    "snapshotDelay": 5000
+    "snapshotDelay": 50000
   }
 }
