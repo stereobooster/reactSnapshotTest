@@ -10,17 +10,42 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
   //
+
+  app.get('/somestaticpage', (req, res) => {
+    console.log(req.URL)
+    console.log(req.baseUrl)
+    console.log(req.path)
+    res.send("yeey")
+  })
+
   app.get('*', (req, res) => {
+    console.log(req.URL)
+    console.log(req.baseUrl)
+    console.log(req.path)
+    
     res.sendfile(path.join(__dirname = 'client/build/index.html'));
   })
 }
 
 app.get('/somestaticpage', (req, res) => {
+  console.log(req.URL)
+  console.log(req.baseUrl)
+  console.log(req.path)
   res.send("yeey")
 })
 
 //build mode
 app.get('*', (req, res) => {
+
+  console.log(req)
+
+  console.log(req.URL)
+  console.log(req.baseUrl)
+  console.log(req.path)
+
+  console.log("aaaa")
+  
+
   res.sendFile(path.join(__dirname+'/client/public/index.html'));
 })
 
