@@ -38,10 +38,14 @@ class Users extends Component {
   
    render() {
 
+        const dataParas = this.state.data ? this.state.data.map(function (ele) {
+            return <p>{ele}</p>
+        }) : null;
+        
         return (
             <div>
                 <p>Users page !!!</p>
-                {this.state.data}
+                {dataParas}
             </div>
         )
    }
