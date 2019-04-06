@@ -1,9 +1,11 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { render } from 'react-snapshot';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Users from './components/Users';
+import Contact from './components/Contact';
 
 
 
@@ -29,6 +31,6 @@ const routing = (
   )
 
 
-render(routing, document.getElementById('root'));
+  ReactDOM.render(routing, document.getElementById('root'));
 
 
