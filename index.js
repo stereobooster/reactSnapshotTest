@@ -3,29 +3,58 @@ const app = express();
 const path = require('path');
 const port = process.env.PORT || 5000;
 
+
+
+//start server
+app.listen(port, (req, res) => {
+  console.log( `server listening on port: ${port}`);
+})
+
+
 //Static file declaration
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-//production mode
-if(process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'client/build')));
-  //
+app.get('/api/users', (req, res) => {
 
-  app.get('/somestaticpage', (req, res) => {
-    console.log(req.URL)
-    console.log(req.baseUrl)
-    console.log(req.path)
-    res.send("yeey")
-  })
+  const users = [
+    {name: "ze", age:23},
+    {name: "a", age:23},
+    {name: "b", age:23},
+    {name: "c", age:23},
+    {name: "d", age:23},
+    {name: "ze", age:23},
+    {name: "a", age:23},
+    {name: "b", age:23},
+    {name: "c", age:23},
+    {name: "d", age:23},
+    {name: "ze", age:23},
+    {name: "a", age:23},
+    {name: "b", age:23},
+    {name: "c", age:23},
+    {name: "d", age:23},
+    {name: "ze", age:23},
+    {name: "a", age:23},
+    {name: "b", age:23},
+    {name: "c", age:23},
+    {name: "d", age:23},
+    {name: "ze", age:23},
+    {name: "a", age:23},
+    {name: "b", age:23},
+    {name: "c", age:23},
+    {name: "d", age:23},
+    {name: "ze", age:23},
+    {name: "a", age:23},
+    {name: "b", age:23},
+    {name: "c", age:23},
+    {name: "micael", age:44}
+  ]
 
-  app.get('*', (req, res) => {
-    console.log(req.URL)
-    console.log(req.baseUrl)
-    console.log(req.path)
+  console.log(JSON.stringify(users))
 
-    res.sendfile(path.join(__dirname = 'client/build'+req.path+'.html'));
-  })
-}
+  res.json(JSON.stringify(users))
+
+})
+
 
 app.get('/somestaticpage', (req, res) => {
   console.log(req.URL)
@@ -34,22 +63,23 @@ app.get('/somestaticpage', (req, res) => {
   res.send("yeey")
 })
 
-//build mode
-app.get('*', (req, res) => {
+//production mode
+if(process.env.NODE_ENV === 'production') {
+  // app.use(express.static(path.join(__dirname, 'client/build')));
+  //
+  app.get('*', (req, res) => {
 
-  console.log(req)
+    res.sendFile(path.join(__dirname = 'client/build'+req.path+'.html'));
+  })
+}
 
-  console.log(req.URL)
-  console.log(req.baseUrl)
-  console.log(req.path)
+else {
+  app.get('*', (req, res) => {
 
-  console.log("aaaa")
-  
+    res.sendFile(path.join(__dirname+'/client/public/index.html'));
+  })
+}
 
-  res.sendFile(path.join(__dirname+'/client/public/index.html'));
-})
 
-//start server
-app.listen(port, (req, res) => {
-  console.log( `server listening on port: ${port}`);
-})
+
+
