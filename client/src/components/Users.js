@@ -24,7 +24,13 @@ class Users extends Component {
         // });
 
         setTimeout(() => {
-            this.setState({data: [{name: "zeeeeca maria"}]})
+            console.log("aaaa")
+            this.setState(
+                {
+                    data: [
+                       2, 3, 4, 2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4
+                    ]
+                })
         }, 1000);
         
     }
