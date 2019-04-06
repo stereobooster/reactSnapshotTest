@@ -12,16 +12,20 @@ class Users extends Component {
     
     componentDidMount() {
   
-        fetch("/api/users")
+        // fetch("/api/users")
 
-        .then(response => {
-            return response.json()
-        })
+        // .then(response => {
+        //     return response.json()
+        // })
         
-        .then((data) => {
-            console.log(data)
-            this.setState({data: data})
-        });
+        // .then((data) => {
+        //     console.log(data)
+        //     this.setState({data: data})
+        // });
+
+        setTimeout(() => {
+            this.setState({data: [{name: "zeeeeca maria"}]})
+        }, 1000);
         
     }
    
