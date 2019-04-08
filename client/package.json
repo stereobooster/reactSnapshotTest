@@ -18,7 +18,12 @@
     "postbuild": "react-snap"
   },
   "reactSnap": {
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "puppeteer": {
+      "networkIdleTimeout": 5000,
+      "waitUntil": "networkidle",
+      "timeout": 3000000
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
