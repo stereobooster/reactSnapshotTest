@@ -20,9 +20,13 @@ class Users extends Component {
         })
         
         .then((data) => {
-            console.log(data)
+            // console.log(data)
             this.setState({data: data.users})
-        });
+        })
+
+        .catch((err)=> {
+            console.log(err)
+        })
 
         // setTimeout(() => {
         //     console.log("aaaa")

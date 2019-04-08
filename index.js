@@ -50,9 +50,7 @@ app.get('/api/users', (req, res) => {
     {name: "micael", age:44}
   ]}
 
-  console.log(JSON.stringify(users))
-
-  res.json(JSON.stringify(users))
+  res.send(JSON.stringify(users))
 
 })
 
