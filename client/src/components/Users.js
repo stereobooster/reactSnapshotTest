@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import User from './User';
 
 
 
@@ -19,8 +20,8 @@ class Users extends Component {
         })
         
         .then((data) => {
-            console.log(data)
-            this.setState({data: data})
+            console.log(JSON.parse(data))
+            this.setState({data: JSON.parse(data).users})
         });
 
         // setTimeout(() => {
@@ -38,9 +39,15 @@ class Users extends Component {
   
    render() {
 
+    
+        console.log("state", this.state)
         const dataParas = this.state.data ? this.state.data.map(function (ele) {
-            return <p>{ele}</p>
+            return (<User name={ele.name}/>)
         }) : null;
+
+        console.log(dataParas)
+        console.log(Array.isArray(dataParas))
+        
         
         return (
             <div>
