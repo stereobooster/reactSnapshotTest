@@ -12,26 +12,26 @@ class Users extends Component {
     
     componentDidMount() {
   
-        // fetch("/api/users")
+        fetch("/api/users")
 
-        // .then(response => {
-        //     return response.json()
-        // })
+        .then(response => {
+            return response.json()
+        })
         
-        // .then((data) => {
-        //     console.log(data)
-        //     this.setState({data: data})
-        // });
+        .then((data) => {
+            console.log(data)
+            this.setState({data: data})
+        });
 
-        setTimeout(() => {
-            console.log("aaaa")
-            this.setState(
-                {
-                    data: [
-                       2, 3, 4, 2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4
-                    ]
-                })
-        }, 1000);
+        // setTimeout(() => {
+        //     console.log("aaaa")
+        //     this.setState(
+        //         {
+        //             data: [
+        //                2, 3, 4, 2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4
+        //             ]
+        //         })
+        // }, 1000);
         
     }
    
