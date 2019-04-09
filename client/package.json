@@ -20,9 +20,7 @@
   "reactSnap": {
     "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
     "puppeteer": {
-      "networkIdleTimeout": 5000,
-      "waitUntil": "networkidle0",
-      "timeout": 3000000
+      "waitUntil": "networkidle0"
     }
   },
   "eslintConfig": {
