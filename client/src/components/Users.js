@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import User from './User';
+import axios from 'axios';
 
 
 
@@ -13,13 +14,26 @@ class Users extends Component {
     
     componentDidMount() {
   
-        fetch("/api/users")
+        // fetch("/api/users")
 
-        .then(response => {
-            return response.json()
-        })
+        // .then(response => {
+        //     return response.json()
+        // })
         
-        .then((data) => {
+        // .then((data) => {
+        //     // console.log(data)
+        //     this.setState({data: data.users})
+        // })
+
+        // .catch((err)=> {
+        //     console.log(err)
+        // })
+
+        axios("/api/users")
+
+        
+        .then((res) => {
+            const data = res.data
             // console.log(data)
             this.setState({data: data.users})
         })
@@ -28,16 +42,25 @@ class Users extends Component {
             console.log(err)
         })
 
-        // setTimeout(() => {
-        //     console.log("aaaa")
-        //     this.setState(
-        //         {
-        //             data: [
-        //                2, 3, 4, 2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4
-        //             ]
-        //         })
-        // }, 1000);
+    //     setTimeout(() => {
+    //         console.log("aaaa")
+    //         this.setState(
+    //             {
+    //                 data: [
+    //                     {name: "ze", age:23},
+    //                     {name: "a", age:23},
+    //                     {name: "b", age:23},
+    //                     {name: "c", age:23},
+    //                     {name: "d", age:23},
+    //                     {name: "ze", age:23},
+    //                     {name: "the end", age:23}
+    //                 ]
+    //             })
+    //     }, 1000);
         
+
+
+
     }
    
   
