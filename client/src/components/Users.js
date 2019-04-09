@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import User from './User';
 
 
 
@@ -12,35 +13,45 @@ class Users extends Component {
     
     componentDidMount() {
   
-        // fetch("/api/users")
+        fetch("/api/users")
 
-        // .then(response => {
-        //     return response.json()
-        // })
+        .then(response => {
+            return response.json()
+        })
         
-        // .then((data) => {
-        //     console.log(data)
-        //     this.setState({data: data})
-        // });
+        .then((data) => {
+            // console.log(data)
+            this.setState({data: data.users})
+        })
 
-        setTimeout(() => {
-            console.log("aaaa")
-            this.setState(
-                {
-                    data: [
-                       2, 3, 4, 2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4
-                    ]
-                })
-        }, 1000);
+        .catch((err)=> {
+            console.log(err)
+        })
+
+        // setTimeout(() => {
+        //     console.log("aaaa")
+        //     this.setState(
+        //         {
+        //             data: [
+        //                2, 3, 4, 2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4,2, 3, 4
+        //             ]
+        //         })
+        // }, 1000);
         
     }
    
   
    render() {
 
+    
+        // console.log("state", this.state)
         const dataParas = this.state.data ? this.state.data.map(function (ele) {
-            return <p>{ele}</p>
+            return (<User name={ele.name}/>)
         }) : null;
+
+        // console.log(dataParas)
+        // console.log(Array.isArray(dataParas))
+        
         
         return (
             <div>
