@@ -6,7 +6,7 @@ const Contact = () => {
 
     return (
         <div>
-            <p>Contact page yo !!!</p>
+            <p>Contact page!!!</p>
             <input type="text"/>
         </div>
     )

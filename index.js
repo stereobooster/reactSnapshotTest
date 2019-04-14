@@ -68,8 +68,6 @@ if(process.env.NODE_ENV === 'production') {
 
     res.sendFile(path.join(__dirname + '/client/build'+req.path+'.html'));
 
-    // n teria de ser assim? 
-    // res.sendFile(path.join(__dirname + `/client/build${req.path}/${req.path}.html`));
   })
 }
 
