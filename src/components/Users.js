@@ -10,38 +10,22 @@ class Users extends Component {
     state = {
         data: null
     }
-  
-    
+
+
     componentDidMount() {
-  
+
 
         // Fetch attempt
 
 
 
-            // fetch("/api/users")
+            fetch("/api/users")
 
-            // .then(response => {
-            //     return response.json()
-            // })
-            
-            // .then((data) => {
-            //     // console.log(data)
-            //     this.setState({data: data.users})
-            // })
+            .then(response => {
+                return response.json()
+            })
 
-            // .catch((err)=> {
-            //     console.log(err)
-            // })
-
-
-        // Axios attempt
-
-
-            axios("/api/users")
-
-            .then((res) => {
-                const data = res.data
+            .then((data) => {
                 // console.log(data)
                 this.setState({data: data.users})
             })
@@ -49,6 +33,22 @@ class Users extends Component {
             .catch((err)=> {
                 console.log(err)
             })
+
+
+        // Axios attempt
+
+
+            // axios("/api/users")
+
+            // .then((res) => {
+            //     const data = res.data
+            //     // console.log(data)
+            //     this.setState({data: data.users})
+            // })
+
+            // .catch((err)=> {
+            //     console.log(err)
+            // })
 
 
         // SetTimeou attempt
@@ -70,21 +70,21 @@ class Users extends Component {
             //             ]
             //         })
             // }, 1000);
-        
+
 
 
 
     }
-   
-  
+
+
    render() {
 
-    
+
         const dataParas = this.state.data ? this.state.data.map(function (ele) {
             return (<User name={ele.name}/>)
         }) : null;
 
-        
+
         return (
             <div>
                 <p>Users page !!!</p>
@@ -92,7 +92,7 @@ class Users extends Component {
             </div>
         )
    }
-    
+
 }
 
 export default Users;
